@@ -1,13 +1,12 @@
-# Backend Ignore
-/backend/env
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
 # dependencies
-frontend/node_modules/
+node_modules/
 
 # Expo
-frontend/.expo/
-frontend/dist/
-frontend/web-build/
+.expo/
+dist/
+web-build/
 
 # Native
 *.orig.*
@@ -30,7 +29,7 @@ yarn-error.*
 *.pem
 
 # local env files
-frontend/.env*.local
+.env*.local
 
 # typescript
 *.tsbuildinfo
