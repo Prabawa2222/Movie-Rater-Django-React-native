@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
+import uuid
+from django.core.files.storage import default_storage
 
 class Movie(models.Model):
     title = models.CharField(max_length=32)
     description = models.TextField(max_length=360)
+    image = models.URLField(blank=True, null=True)
 
     def no_of_ratings(self):
         ratings = Rating.objects.filter(movie=self)

@@ -8,9 +8,16 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email']
 
 class MovieSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(write_only=True, required=False)
+
     class Meta:
         model = Movie
-        fields = ['id', 'title', 'description', 'no_of_ratings', 'avg_rating']
+        fields = ['id', 'title', 'description', 'no_of_ratings', 'avg_rating', 'image']
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['image'] = instance.image 
+        return representation
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:
