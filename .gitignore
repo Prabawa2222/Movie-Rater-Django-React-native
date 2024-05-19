@@ -9,6 +9,8 @@ frontend/.expo/
 frontend/dist/
 frontend/web-build/
 
+backend/serviceAccountKey.json
+
 # Native
 *.orig.*
 *.jks
